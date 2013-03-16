@@ -1,0 +1,23 @@
+@(inputForm: Form[Calc]) @import helper._
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>逆ポーランド記法電卓</title>
+</head>
+
+
+<body>
+
+	<h1>逆ポーランド記法電卓</h1>
+	<h3>フォームに逆ポーランド記法で数式を半角入力して下さい</h3>
+	<h3>※例）1 2 + 3 4 + *</h3>
+
+	<form action="@{Application.input()}" method="POST">
+		<input type="text" name="inputdata" />
+		<input type=submit value="計算" />
+	</form>
+
+</body>
+
+</html>
