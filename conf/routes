@@ -4,10 +4,7 @@
 
 # Home page
 GET     /                           controllers.Application.index()
-
-# Calculator
-POST	/calculator					controllers.Application.input()
-GET		/calculator					controllers.Application.output()
+POST	/sendform					controllers.Application.input
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

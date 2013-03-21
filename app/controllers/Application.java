@@ -1,31 +1,26 @@
 package controllers;
 
-import play.*;
+import forms.*;
 import play.mvc.*;
-import models.*;
-import views.html.*;
+import play.*;
 import play.data.*;
+import views.html.*;
 
 public class Application extends Controller {
 
-	static Form<Calc> calcForm = form(Calc.class);
-	
 	public static Result index() {
-		return ok(
-				views.html.index.render(calcForm)
-		);
+		String title = "逆ポーランド記法電卓";
+		String message = "ここに表示されます";
+		Form<MyForm> form1 = form(MyForm.class);
+		return ok(index.render(title, message, form1));
 	}
 
 	public static Result input() {
-		return TODO;
+		
+		String title = "逆ポーランド記法電卓";
+		Form<MyForm> form1 = form(MyForm.class).bindFromRequest();
+		MyForm data = form1.get();
+		String message = data.input;
+		return ok(index.render(title, message, form1));
 	}
-
-	public static Result keisan() {
-		return TODO;
-	}
-
-	public static Result output() {
-		return TODO;
-	}
-
 }
