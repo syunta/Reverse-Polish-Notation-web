@@ -4,7 +4,7 @@ import PlayProject._
 
 object ApplicationBuild extends Build {
 
-    val appName         = "RPN_web"
+    val appName         = "web_RPN"
     val appVersion      = "1.0-SNAPSHOT"
 
     val appDependencies = Seq(

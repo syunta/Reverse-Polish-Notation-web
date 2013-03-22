@@ -1,17 +1,22 @@
-@(title: String, message: String, form1: Form[forms.MyForm]) 
+@(title: String, inputForm: Form[Dbase], inputLists: List[Dbase])
 @import helper._ 
 
-@main(title){
+@main(title) {
 
-	<h1>@title</h1>
-	<h3>フォームに逆ポーランド記法で数式を半角入力して下さい</h3>
+<h1>@title</h1>
+<h3>フォームに逆ポーランド記法で数式を半角入力して下さい.</h3>
 
-<form action="/sendform" method="POST" id="form1">
-	<input type="text" id="input" name="input" value="" placeholder="例）1 2 + 3 4 + *">
+<form action="/sendform" method="POST" id="Dbase">
+	<input type="text" id="input" name="input" placeholder="例）1 2 + 3 4 + *">
 	<input type="submit" value="計算">
 </form>
 
 <h2>計算結果</h2>
-<h3>@message</h3>
+
+	@for(inputList <- inputLists) {
+		<ul>
+			<li>@inputList.input</li>
+		</ul>
+	}
 
 }

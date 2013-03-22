@@ -3,14 +3,13 @@
 
 # --- !Ups
 
-create table calc (
+create table dbase (
   id                        bigint not null,
-  input_data                varchar(255),
-  output_data               varchar(255),
-  constraint pk_calc primary key (id))
+  input                     varchar(255),
+  constraint pk_dbase primary key (id))
 ;
 
-create sequence calc_seq;
+create sequence dbase_seq;
 
 
 
@@ -19,9 +18,9 @@ create sequence calc_seq;
 
 SET REFERENTIAL_INTEGRITY FALSE;
 
-drop table if exists calc;
+drop table if exists dbase;
 
 SET REFERENTIAL_INTEGRITY TRUE;
 
-drop sequence if exists calc_seq;
+drop sequence if exists dbase_seq;
 
